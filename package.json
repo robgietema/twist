@@ -26,7 +26,8 @@
         "buster-lint": "~0.3.1",
         "buster-coverage": "~0.1.0",
         "yuidocjs": "~0.3.34",
-        "socket.io": "~0.9.13"
+        "socket.io": "~0.9.13",
+        "express": "~3.1.0"
     },
     "licenses" : [
         {

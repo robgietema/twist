@@ -1,1 +1,12 @@
 #!/usr/bin/env node
+
+var express = require('express'),
+    app = express(),
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server);
+
+app.configure(function () {
+    app.use(express.static(process.cwd() + '/public'));
+});
+
+server.listen(8080);
