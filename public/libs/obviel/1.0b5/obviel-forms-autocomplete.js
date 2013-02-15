@@ -76,12 +76,8 @@
                             labels.push(item.label);
                         });
                         autocompleteCallback(labels);
-                    },
-                    error: function(xhr, status, error) {
-                        // XXX must always call autocomplete callback
-                        // even when there's an error?
                     }
-                });
+                }).fail(self.registry.httpErrorHook);
             };
         } else if (autocompleteData.length &&
                    typeof autocompleteData[0] !== 'string') {
@@ -113,7 +109,7 @@
             // a change explicitly so we can report errors
             inputEl.val(cloneEl.val());
             var changeEv = $.Event('change');
-            changeEv.target = inputEl;
+            changeEv.target = inputEl.get(0);
             inputEl.trigger(changeEv);
         };
         cloneEl.autocomplete(autocompleteOptions);
@@ -126,7 +122,7 @@
             }
             inputEl.val(cloneEl.val());
             var changeEv = $.Event('change');
-            changeEv.target = inputEl;
+            changeEv.target = inputEl.get(0);
             inputEl.trigger(changeEv);
         });
     };

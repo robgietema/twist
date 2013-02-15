@@ -383,6 +383,11 @@ obviel.forms = {};
             var formEl = $('form', self.el);
             formEl.trigger('form-change.obviel');
         });
+
+        defer.fail(function(xhr) {
+            self.registry.httpErrorHook(xhr);
+        });
+        
         return defer;
     };
     
@@ -515,7 +520,7 @@ obviel.forms = {};
     
     module.Widget.prototype.renderErrorArea = function() {
         $('.obviel-field-input', this.el).append(
-            '<span class="obviel-error-area help-inline"></div>');
+            '<span class="obviel-error-area help-inline"></span>');
         
         $('.obviel-error-area', this.el).render(
             {iface: 'obvielFormsErrorArea',
