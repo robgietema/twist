@@ -1,0 +1,36 @@
+{
+    "name": "hoop",
+    "version": "0.0.1",
+    "description": "Multi Player Javascript Game",
+    "keywords" : ["game"],
+    "homepage": "http://github.com/robgietema/twist",
+    "author": "Rob Gietema",
+    "contributors": [{
+        "name": "Rob Gietema",
+        "email": "rob.gietema@gmail.com"
+    }],
+    "main": "./lib/twist",
+    "bin" : { "twist" : "./bin/twist" },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/robgietema/twist.git"
+    },
+    "bugs" : "http://github.com/robgietema/twist/issues",
+    "scripts": {
+        "test": "./node_modules/buster/bin/buster-test"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "buster": "~0.6.2",
+        "buster-lint": "~0.3.1",
+        "buster-coverage": "~0.1.0",
+        "yuidocjs": "~0.3.34"
+    },
+    "licenses" : [
+        {
+            "type" : "GPLv3",
+            "url" : "http://www.gnu.org/licenses/gpl-3.0.html"
+        }
+    ]
+}
