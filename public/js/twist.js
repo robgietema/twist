@@ -1,4 +1,4 @@
-var loop = {};
+var twist = {};
 
 (function($, obviel, module) {
 
@@ -24,11 +24,14 @@ var loop = {};
     $(document).ready(function () {
         module.app = {
             iface: 'app'
-        };        
+        };
         $('body').render(module.app);
 
-        $(window).bind('deviceorientation', function(event) {
-            $('body div').html(event.gamma);
+        module.socket = io.connect('/');
+
+        window.addEventListener('deviceorientation', function(event) {
+            module.socket.emit('move', event.beta);
+            $('body div').html(event.beta);
         });
     });
-}(jQuery, obviel, loop));
+}(jQuery, obviel, twist));

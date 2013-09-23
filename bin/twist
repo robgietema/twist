@@ -10,3 +10,9 @@ app.configure(function () {
 });
 
 server.listen(8080);
+
+io.sockets.on('connection', function (socket) {
+    socket.on('move', function (angle) {
+        socket.broadcast.emit('move', angle);
+    });
+});
